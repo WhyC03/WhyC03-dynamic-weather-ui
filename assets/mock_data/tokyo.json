@@ -1,0 +1,33 @@
+{
+  "currentWeather": {
+    "city": "Tokyo",
+    "temperature": 27.3,
+    "conditionCode": "rainy",
+    "conditionDescription": "Rain Showers",
+    "humidity": 75,
+    "windSpeed": 3.4,
+    "windDirection": "NE",
+    "feelsLike": 29.0,
+    "pressure": 1008,
+    "visibility": 8,
+    "iconId": "rain"
+  },
+  "sevenDayForecast": [
+    {
+      "date": "2025-05-16T00:00:00.000Z",
+      "highTemp": 29.0,
+      "lowTemp": 21.0,
+      "conditionCode": "rainy",
+      "conditionDescription": "Rain",
+      "iconId": "rain",
+      "hourlyForecasts": [
+        { "time": "2025-05-16T01:00:00.000Z", "temperature": 24.0, "conditionCode": "rainy", "iconId": "rain" }
+      ],
+      "precipitationProbability": 90,
+      "uvIndex": 3,
+      "sunrise": "2025-05-16T04:45:00.000Z",
+      "sunset": "2025-05-16T18:30:00.000Z"
+    }
+  ],
+  "appSettings": { "isCelsius": true, "selectedCityName": "Tokyo" }
+}
