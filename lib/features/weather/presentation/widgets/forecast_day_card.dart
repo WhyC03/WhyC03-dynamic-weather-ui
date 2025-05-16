@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_ui/features/weather/model/weather_models.dart';
 
 class ForecastDayCard extends StatelessWidget {
   final String day;
@@ -8,6 +9,7 @@ class ForecastDayCard extends StatelessWidget {
   final String iconId;
   final bool isCelsius;
   final VoidCallback onTap;
+  final DailyForecast forecast;
 
   const ForecastDayCard({
     super.key,
@@ -18,13 +20,15 @@ class ForecastDayCard extends StatelessWidget {
     required this.iconId,
     required this.isCelsius,
     required this.onTap,
+    required this.forecast,
   });
+
+  double convertTemp(double celsius) =>
+      isCelsius ? celsius : (celsius * 9 / 5 + 32);
 
   @override
   Widget build(BuildContext context) {
-    double convertTemp(double celsius) =>
-        isCelsius ? celsius : celsius * 9 / 5 + 32;
-
+    
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ListTile(

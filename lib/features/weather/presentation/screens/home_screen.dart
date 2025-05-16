@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_ui/features/weather/presentation/screens/forecast_details_scree.dart';
 import 'package:weather_ui/features/weather/presentation/screens/settings_screen.dart';
 import '../../data/weather_provider.dart';
 import '../widgets/forecast_day_card.dart';
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final weatherProvider = context.watch<WeatherProvider>();
     final weatherData = weatherProvider.weatherData;
 
@@ -49,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             ],
 
             pinned: true,
-            expandedHeight: 250,
+            expandedHeight: size.height * 0.25,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 '${current.city} - ${settings.isCelsius ? current.temperature.toStringAsFixed(1) : (current.temperature * 9 / 5 + 32).toStringAsFixed(1)}°${settings.isCelsius ? 'C' : 'F'}',
@@ -121,7 +123,19 @@ class HomeScreen extends StatelessWidget {
                 conditionDescription: dayForecast.conditionDescription,
                 iconId: dayForecast.iconId,
                 isCelsius: settings.isCelsius,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (_) => ForecastDetailScreen(
+                            forecast: dayForecast,
+                            isCelsius: settings.isCelsius,
+                          ),
+                    ),
+                  );
+                },
+                forecast: dayForecast,
               );
             }, childCount: weatherData.sevenDayForecast.length),
           ),
