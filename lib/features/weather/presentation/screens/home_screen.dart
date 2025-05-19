@@ -53,9 +53,11 @@ class HomeScreen extends StatelessWidget {
             pinned: true,
             expandedHeight: size.height * 0.25,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                '${current.city} - ${settings.isCelsius ? current.temperature.toStringAsFixed(1) : (current.temperature * 9 / 5 + 32).toStringAsFixed(1)}°${settings.isCelsius ? 'C' : 'F'}',
-              ),
+              // title: Text(
+              //   '${current.city} - ${settings.isCelsius ? current.temperature.toStringAsFixed(1) : (current.temperature * 9 / 5 + 32).toStringAsFixed(1)}°${settings.isCelsius ? 'C' : 'F'}',
+              //   textAlign: TextAlign.center,
+              //   style: TextStyle(fontSize: 20),
+              // ),
               background: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -65,11 +67,21 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  child: Icon(
-                    Icons
-                        .wb_sunny, // You can replace with weather icon based on current.iconId
-                    size: 100,
-                    color: Colors.yellow.shade600,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 65),
+                      Icon(
+                        Icons.wb_sunny,
+                        size: 100,
+                        color: Colors.yellow.shade600,
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        '${current.city} - ${settings.isCelsius ? current.temperature.toStringAsFixed(1) : (current.temperature * 9 / 5 + 32).toStringAsFixed(1)}°${settings.isCelsius ? 'C' : 'F'}',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 35),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -145,6 +157,10 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildMetric(String title, String value, IconData icon) {
-    return Chip(avatar: Icon(icon, size: 20), label: Text('$title: $value'));
+    return Chip(
+      avatar: Icon(icon, size: 20),
+      label: Text('$title: $value'),
+      backgroundColor:Color(0xffE2D3FA),
+    );
   }
 }

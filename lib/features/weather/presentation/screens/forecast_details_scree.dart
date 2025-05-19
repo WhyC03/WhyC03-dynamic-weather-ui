@@ -23,12 +23,23 @@ class ForecastDetailScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            backgroundColor: Color(0xffE0B6FF),
             pinned: true,
-            expandedHeight: size.height * 0.3,
+            expandedHeight: size.height * 0.25,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(formattedDate),
               background: Center(
-                child: Icon(Icons.wb_sunny, size: 80, color: Colors.yellow),
+                child: Column(
+                  children: [
+                    SizedBox(height: 65),
+                    Icon(Icons.wb_sunny, size: 80, color: Colors.yellow),
+                    SizedBox(height: 20),
+                    Text(
+                      formattedDate,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

@@ -1,7 +1,7 @@
 {
   "currentWeather": {
     "city": "London",
-    "temperature": 16.8,
+    "temperature": 19.8,
     "conditionCode": "cloudy",
     "conditionDescription": "Overcast",
     "humidity": 70,
@@ -14,19 +14,19 @@
   },
   "sevenDayForecast": [
     {
-      "date": "2025-05-16T00:00:00.000Z",
+      "date": "2025-05-19T00:00:00.000Z",
       "highTemp": 18.0,
       "lowTemp": 12.0,
       "conditionCode": "cloudy",
       "conditionDescription": "Overcast",
       "iconId": "cloud",
       "hourlyForecasts": [
-        { "time": "2025-05-16T01:00:00.000Z", "temperature": 14.0, "conditionCode": "cloudy", "iconId": "cloud" }
+        { "time": "2025-05-19T01:00:00.000Z", "temperature": 14.0, "conditionCode": "cloudy", "iconId": "cloud" }
       ],
       "precipitationProbability": 20,
       "uvIndex": 4,
-      "sunrise": "2025-05-16T05:15:00.000Z",
-      "sunset": "2025-05-16T20:45:00.000Z"
+      "sunrise": "2025-05-19T05:15:00.000Z",
+      "sunset": "2025-05-19T20:45:00.000Z"
     }
   ],
   "appSettings": { "isCelsius": true, "selectedCityName": "London" }

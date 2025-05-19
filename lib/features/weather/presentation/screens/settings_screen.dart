@@ -27,7 +27,10 @@ class SettingsScreen extends StatelessWidget {
     });
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Settings")),
+      appBar: AppBar(
+        title: const Text("Settings"),
+        backgroundColor: Color(0xffE0B6FF),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ReactiveForm(
@@ -41,6 +44,7 @@ class SettingsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text("Select City:"),
+              SizedBox(height: 10),
               ReactiveDropdownField<String>(
                 formControlName: 'selectedCity',
                 items:
@@ -54,6 +58,9 @@ class SettingsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xffE0B6FF),
+                ),
                 onPressed: () {
                   final isCelsius = form.control('isCelsius').value as bool;
                   final city = form.control('selectedCity').value as String;
